@@ -1,0 +1,118 @@
+.menu-bubble {
+  padding: 1em;
+  position: relative;
+  .bubble-shape {
+    margin: 0 auto;
+    display: block;
+    max-width: 354px;
+    max-height: 370px;
+  }
+  .menu-bar {
+    height: 60%;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      width: 100%;
+      list-style: none;
+      font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+      text-align: center;
+    }
+    .languages {
+      width: fit-content;
+      button {
+        font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}
+
+.desktop-content {
+  display: none;
+}
+
+.languages {
+  display: flex;
+  gap: 14px;
+}
+
+span {
+  cursor: pointer;
+}
+
+.languages span {
+  width: 39px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.lang-de {
+  .german {
+    background-image: url(./../../../assets/img/Ellipse_languages.svg);
+    background-repeat: no-repeat;
+    color: #f8f5ec;
+  }
+
+  .english {
+    background-image: none;
+    color: black;
+  }
+}
+
+.lang-en {
+  .german {
+    background-image: none;
+    color: black;
+  }
+
+  .english {
+    background-image: url(./../../../assets/img/Ellipse_languages.svg);
+    background-repeat: no-repeat;
+    color: #f8f5ec;
+  }
+}
+
+@media (min-width: 900px) {
+  .desktop-content {
+    height: 104px;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f28a62;
+    .menu-bar {
+      display: flex;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: clamp(1.25rem, 0.625rem + 1.111vw, 1.625rem);
+      padding-left: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
+      padding-right: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
+      li {
+        list-style-type: none;
+      }
+      .languages {
+        list-style-type: none;
+        button {
+          font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}

@@ -1,0 +1,163 @@
+.content {
+    margin-left: clamp(1.5rem, -6.213rem + 24.681vw, 16rem);
+    margin-right: clamp(1.5rem, -6.213rem + 24.681vw, 16rem);
+}
+
+.arrow-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 76px 0 104px 0;
+    background-color: unset;
+    border: unset;
+
+    .arrow-top-img:hover {
+        cursor: pointer;
+    }
+}
+
+.arrow-top:hover img,
+.arrow-top:focus-visible img {
+  content: url('../../../assets/img/Arrow_up_hover.svg');
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact-box {
+    gap: 32px;
+}
+
+.work-together {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    color: #F28A62;
+    margin-top: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.field:focus::placeholder {
+    color: transparent;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+input {
+    background-color: #042639;
+    text-align: start;
+    height: 60px;
+    border-radius: 30px;
+    border: solid 1px #F28A62;
+    font-family: 'Josefin Sans';
+    padding-left: 26px;
+    color: #F8F5EC;
+}
+
+textarea {
+    background-color: #042639;
+    text-align: start;
+    resize: none;
+    height: 200px;
+    border-radius: 30px;
+    border: solid 1px #F28A62;
+    font-family: 'Josefin Sans';
+    padding: 29px 0 0 26px;
+    color: #F8F5EC;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 40%;
+    font-size: 16px;
+}
+
+.privacy-box {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 5px;
+}
+
+.send-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.send-btn img {
+    cursor: not-allowed;
+}
+
+a {
+    text-decoration: none;
+}
+
+.arrow-up {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    section {
+        position: relative;
+    }
+
+    .arrow-up {
+        position: absolute;
+        top: 12px;
+        right: clamp(5rem, -5rem + 16vw, 7rem);
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        background-color: unset;
+        border: unset;
+
+        .arrow-up-img:hover {
+            cursor: pointer;
+        }
+    }
+
+    .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .contact-data {
+        order: 2;
+    }
+
+    .contact-box {
+        margin-bottom: unset;
+    }
+
+    .inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 21px;
+    }
+
+    form textarea.field {
+        grid-column: 1 / -1;
+    }
+
+    .send-btn {
+        margin-bottom: 180px;
+    }
+
+    .arrow-top {
+        display: none;
+    }
+}
