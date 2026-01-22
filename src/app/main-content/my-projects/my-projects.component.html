@@ -1,84 +1,202 @@
-@if (project$ | async; as project) {
-<section id="projects">
-  <h2>{{ project.headline }}</h2>
-  @if (project.projects?.length) {
-  <div class="projects">
-    @for (p of project.projects; track p; let i = $index) {
-    <span
-      (click)="showProject(i)"
-      [class.card-background]="currentProjectIndex === i"
-      class="project-list"
-    >
-      <span class="wide">{{ p.proName }}</span>
-      <span class="mobile">{{ p.proNumber }}</span>
-    </span>
-    }
-  </div>
-  } @if(project.projects?.length) {
-  <div class="project-detail">
-    @for (ref of project.projects ?? []; track ref; let idx = $index) { @if (idx ===
-    currentProjectIndex) {
-    <h3>{{ ref.proName }}</h3>
-    <div class="technologies">
-      <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
-      <span>{{ project.duration }} {{ ref.proDuration }}</span>
-    </div>
-    <div class="content">
-      <div class="project-img">
-        @if (ref.proTechImg?.length) {
-        <div class="tech-box">
-          <span>{{ project.technologies }}</span>
-          <div class="tech-img">
-            @for (p of ref.proTechImg ?? []; track p) {
-            <img [src]="p.src" />
-            }
-          </div>
-        </div>
-        }
-        <img [src]="ref.img" alt="{{ ref.proName }}" />
-      </div>
-      <div class="margin-bottom-32 content-project">
-        <div class="project-explanation">
-          <img src="assets/img/Ellipse_small.svg" />
-
-          <span class="headline">{{ project.about }} </span>
-          <div class="duration-wide">
-            <span>{{ project.duration }}</span>
-            <span>{{ ref.proDuration }}</span>
-          </div>
-        </div>
-        <div class="description">
-          <span [innerHTML]="ref.proDeclaration"></span>
-        </div>
-        <div class="project-explanation">
-          <img src="assets/img/Ellipse_small.svg" />
-          <span class="headline">{{ project.organisation }}</span>
-        </div>
-        <div class="description">
-          <span>{{ ref.proOrganisation }}</span>
-        </div>
-        @if (ref?.proGroupWork) {
-        <div class="project-explanation">
-          <img src="assets/img/Ellipse_small.svg" />
-          <span class="headline">{{ project.groupWork }}</span>
-        </div>
-        }
-        <div class="description">
-          <span>{{ ref.proGroupWork }}</span>
-        </div>
-      </div>
-    </div>
+<!-- @if (project$ | async; as project) {
+  <section id="projects">
+    <h2>{{ project.headline }}</h2>
     @if (project.projects?.length) {
-    <div class="live-test">
-      <button type="button" class="btn-test-git" (click)="openExternal(ref.lifeTest)">
-        <img src="assets/img/Btn_LifeTest.svg" />
-      </button>
-      <button type="button" class="btn-test-git" (click)="openExternal(ref.gitHub)">
-        <img src="assets/img/Btn_GitHub.svg" />
-      </button>
-    </div>
-    } } }
-  </div>
-  }
-</section>
+      <div class="projects">
+        @for (p of project.projects; track p; let i = $index) {
+          <span
+            (click)="showProject(i)"
+            [class.card-background]="currentProjectIndex === i"
+            class="project-list"
+          >
+            <span class="wide">{{ p.proName }}</span>
+            <span class="mobile">{{ p.proNumber }}</span>
+          </span>
+        }
+      </div>
+    }
+    @if (project.projects?.length) {
+      <div class="project-detail">
+        @for (ref of project.projects ?? []; track ref; let idx = $index) {
+          @if (idx === currentProjectIndex) {
+            <h3>{{ ref.proName }}</h3>
+            <div class="technologies">
+              {{ project.technologies }} {{ ref.proTechnologies }}
+            </div>
+            <div class="duration">
+              {{ project.duration }} {{ ref.proDuration }}
+            </div>
+            <div class="content">
+              <div class="project-img">
+                @if (ref.proTechImg?.length) {
+                  <div class="tech-box">
+                    <span>{{ project.technologies }}</span>
+                    <div class="tech-img">
+                      @for (p of ref.proTechImg ?? []; track p) {
+                        <img [src]="p.src" />
+                      }
+                    </div>
+                  </div>
+                }
+                <img [src]="ref.img" alt="{{ ref.proName }}" />
+              </div>
+              <div class="margin-bottom-32 content-project">
+                <div class="project-explanation">
+                  <img src="assets/img/Ellipse_small.svg" />
+
+                  <span class="headline">{{ project.about }} </span>
+                  <div class="duration-wide">
+                    <span>{{ project.duration }}</span>
+                    <span>{{ ref.proDuration }}</span>
+                  </div>
+                </div>
+                <div class="description">
+                  <span [innerHTML]="ref.proDeclaration"></span>
+                </div>
+                <div class="project-explanation about-project">
+                  <img src="assets/img/Ellipse_small.svg" />
+                  <span class="headline">{{ project.organisation }}</span>
+                </div>
+                <div class="description organisation">
+                  <span>{{ ref.proOrganisation }}</span>
+                </div>
+                @if (ref?.proGroupWork) {
+                  <div class="project-explanation">
+                    <img src="assets/img/Ellipse_small.svg" />
+                    <span class="headline">{{ project.groupWork }}</span>
+                  </div>
+                }
+                <div class="description experience">
+                  <span>{{ ref.proGroupWork }}</span>
+                </div>
+              </div>
+            </div>
+            @if (project.projects?.length) {
+              <div class="live-test">
+                <button
+                  type="button"
+                  class="btn-test-git"
+                  (click)="openExternal(ref.lifeTest)"
+                >
+                  <img src="assets/img/Btn_LifeTest.svg" />
+                </button>
+                <button
+                  type="button"
+                  class="btn-test-git"
+                  (click)="openExternal(ref.gitHub)"
+                >
+                  <img src="assets/img/Btn_GitHub.svg" />
+                </button>
+              </div>
+            }
+          }
+        }
+      </div>
+    }
+  </section>
+} -->
+
+@if (project$ | async; as project) {
+  <section id="projects">
+    <h2>{{ project.headline }}</h2>
+    @if (project.projects?.length) {
+      <div class="projects">
+        @for (p of project.projects; track p; let i = $index) {
+          <span
+            (click)="showProject(i)"
+            [class.card-background]="currentProjectIndex === i"
+            class="project-list"
+          >
+            <span class="wide">{{ p.proName }}</span>
+            <span class="mobile">{{ p.proNumber }}</span>
+          </span>
+        }
+      </div>
+    }
+    @if (project.projects?.length) {
+      <div class="project-detail">
+        @for (ref of project.projects ?? []; track ref; let idx = $index) {
+          @if (idx === currentProjectIndex) {
+            <h3>{{ ref.proName }}</h3>
+            <div class="technologies">
+              {{ project.technologies }}: {{ ref.proTechnologies }}
+            </div>
+            @if (ref.proTechImg?.length) {
+              <div class="tech-box">
+                <span>{{ project.technologies }}:</span>
+                <div class="tech-img">
+                  @for (p of ref.proTechImg ?? []; track p) {
+                    <img [src]="p.src" />
+                  }
+                </div>
+              </div>
+            }
+            <div class="duration">
+              <span>{{ project.duration }}</span
+              >:
+              <span>{{ ref.proDuration }}</span>
+            </div>
+            <div class="img-wrapper">
+              <img [src]="ref.img" alt="{{ ref.proName }}" />
+            </div>
+            <div class="about-title">
+              <img src="assets/img/Ellipse_small.svg" alt="" />
+              <h4 class="headline">{{ project.about }}</h4>
+            </div>
+            <div class="about-text">
+              <span [innerHTML]="ref.proDeclaration"></span>
+            </div>
+            <div class="organisation-title">
+              <img src="assets/img/Ellipse_small.svg" alt="" />
+              <h4 class="headline">{{ project.organisation }}</h4>
+            </div>
+            <div class="organisation-text">
+              <span>{{ ref.proOrganisation }}</span>
+            </div>
+            @if (ref?.proGroupWork) {
+              <div class="experience-title">
+                <img src="assets/img/Ellipse_small.svg" />
+                <h4 class="headline">{{ project.groupWork }}</h4>
+              </div>
+            }
+            <div class="experience-text">
+              <span>{{ ref.proGroupWork }}</span>
+            </div>
+            @if (project.projects?.length) {
+              <div class="live-test">
+                <button
+                  type="button"
+                  class="btn-test-git"
+                  (click)="openExternal(ref.lifeTest)"
+                >
+                  <img src="assets/img/Btn_LifeTest.svg" />
+                </button>
+                <button
+                  type="button"
+                  class="btn-test-git"
+                  (click)="openExternal(ref.gitHub)"
+                >
+                  <img src="assets/img/Btn_GitHub.svg" />
+                </button>
+              </div>
+            }
+          }
+        }
+      </div>
+    }
+  </section>
 }
+
+<!-- <div class="project-img">
+                @if (ref.proTechImg?.length) {
+                  <div class="tech-box">
+                    <span>{{ project.technologies }}:</span>
+                    <div class="tech-img">
+                      @for (p of ref.proTechImg ?? []; track p) {
+                        <img [src]="p.src" />
+                      }
+                    </div>
+                  </div>
+                }
+                <img [src]="ref.img" alt="{{ ref.proName }}" />
+              </div> -->

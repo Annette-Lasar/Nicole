@@ -1,6 +1,11 @@
 .menu-bubble {
   padding: 1em;
-  position: relative;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #042639;
   .bubble-shape {
     margin: 0 auto;
     display: block;

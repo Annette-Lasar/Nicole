@@ -1,8 +1,8 @@
 
 {
     "headline": "Meine Projekte",
-    "technologies": "Technologies: ",
-    "duration": "Dauer: ",
+    "technologies": "Technologien",
+    "duration": "Dauer",
     "about": "Über das Projekt",
     "organisation": "Wie ich meine Arbeit organisiert habe",
     "groupWork": "Meine Gruppenarbeitserfahrung",
@@ -11,7 +11,13 @@
             "proNumber": "1. Projekt",
             "proName": "DA Bubble",
             "proTechnologies": "Angular, Typescript",
-            "proTechImg": [],
+            "proTechImg": [
+                {"src": "assets/img/HTML.svg"},
+                {"src": "assets/img/CSS.svg"},
+                {"src": "assets/img/Angular.svg"},
+                {"src": "assets/img/Git.svg"},
+                {"src": "assets/img/Firebase.svg"}
+            ],
             "proDuration": "4 Wochen",
             "img": "assets/img/DABubble.png",
             "proDeclaration": "In Arbeit",

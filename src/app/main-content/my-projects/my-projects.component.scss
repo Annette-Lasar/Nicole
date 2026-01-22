@@ -1,170 +1,225 @@
-
 .projects {
-    height: clamp(2.438rem, 1.146rem + 5.167vw, 4.375rem);
-    display: flex;
-    padding-left: clamp(0rem, -4.167rem + 16.667vw, 6.25rem);
-    font-size: clamp(1.125rem, 0.625rem + 2vw, 1.875rem);
+  height: clamp(2.438rem, 1.146rem + 5.167vw, 4.375rem);
+  display: flex;
+  padding-left: clamp(0rem, -4.167rem + 16.667vw, 6.25rem);
+  font-size: clamp(1.125rem, 0.625rem + 2vw, 1.875rem);
 
-    .card-background {
-        background-color: #2D383F;
-    }
+  .card-background {
+    background-color: #2d383f;
+  }
 }
 
 .project-list {
-    display: flex;
-    align-items: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    padding-left: clamp(0.75rem, 0rem + 3vw, 1.875rem);
-    padding-right: clamp(0.75rem, 0rem + 3vw, 1.875rem);
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-left: clamp(0.75rem, 0rem + 3vw, 1.875rem);
+  padding-right: clamp(0.75rem, 0rem + 3vw, 1.875rem);
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .wide,
 .tech-box {
-    display: none;
+  display: none;
 }
 
 .project-detail {
-    background-color: #2D383F;
-    padding-left: clamp(1.25rem, -3.75rem + 16vw, 6.25rem);
-    padding-right: clamp(1.25rem, -3.75rem + 16vw, 6.25rem);
-
-    padding-bottom: 38px;
-    border-radius: 0 30px 30px;
+  background-color: #2d383f;
+  padding: 1em;
+  border-radius: 0 30px 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "headline"
+    "technologies"
+    "duration"
+    "img"
+    "about-title"
+    "about-text"
+    "organisation-title"
+    "organisation-text"
+    "experience-title"
+    "experience-text"
+    "buttons";
 }
 
 h3 {
-    font-size: 24px;
-    color: #F28A62;
-    margin: 0;
-    padding: 29px 0 16px;
+  grid-area: headline;
+  font-size: 24px;
+  color: #f28a62;
+  margin: 0;
+  padding: 29px 0 16px;
 }
 
 .technologies {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
+  padding: 0.25em 0;
+  grid-area: technologies;
 }
 
-.project-img {
-    max-width: 453px;
-    padding: 24px 30px;
-
-    img {
-        max-width: 100%;
-        border-radius: 30px;
-    }
+.duration {
+  padding: 0.25em 0;
+  grid-area: duration;
 }
 
-.project-explanation {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.img-wrapper {
+  width: fit-content;
+  grid-area: img;
+  justify-self: center;
+  padding: 24px 30px;
+
+  img {
+    max-width: 100%;
+    border-radius: 30px;
+  }
+}
+
+.about-title,
+.organisation-title,
+.experience-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  h4 {
+    margin: 0;
+    align-self: last baseline;
+  }
+}
+
+.about-title {
+  grid-area: about-title;
+}
+
+.organisation-title {
+  grid-area: organisation-title;
+}
+
+.experience-title {
+  grid-area: experience-title;
 }
 
 .headline {
-    font-size: clamp(1.125rem, 0.5rem + 2vw, 1.75rem);
-    color: #F28A62;
+  font-size: clamp(1.125rem, 0.5rem + 2vw, 1.7rem);
 }
 
-.duration-wide {
-    display: none;
+.about-text,
+.organisation-text,
+.experience-text {
+  margin: 16px 0 24px 0;
+  font-size: 16px;
 }
 
-.description {
-    margin: 16px 0 24px 0;
-    font-size: 16px;
+.about-text {
+  grid-area: about-text;
+}
+
+.organisation-text {
+  grid-area: organisation-text;
+}
+.experience-text {
+  grid-area: experience-text;
 }
 
 .live-test {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+  grid-area: buttons;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .btn-test-git {
-    background-color: unset;
-    border: unset;
+  background-color: unset;
+  border: unset;
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
+/* ================================================================
+
+MEDIA QUERIES
+
+=================================================================== */
+
 @media (min-width: 1131px) {
-    .wide {
-        display: block;
-    }
+  .wide {
+    display: block;
+  }
 
-    .mobile {
-        display: none;
-    }
+  .mobile {
+    display: none;
+  }
 
-    h3 {
-        display: none;
-    }
+  h3 {
+    display: none;
+  }
 
-    .content {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 40px 100px 34px 0;
-        gap: 56px;
-    }
+  .content-project {
+    max-width: fit-content;
+    margin: unset;
+    flex: 1;
+  }
 
-    .content-project {
-        max-width: fit-content;
-        margin: unset;
-        flex: 1;
-    }
+  .headline {
+    color: #f8f5ec;
+  }
 
-    .headline {
-        color: #F8F5EC;
-    }
+  .duration-wide {
+    display: flex;
+    padding-left: 24px;
+    font-size: 18px;
+    gap: 8px;
+  }
 
-    .duration-wide {
-        display: flex;
-        padding-left: 24px;
-        font-size: 18px;
-        gap: 8px;
-    }
+  .project-detail {
+    grid-template-columns: auto repeat(4, 1fr);
+    grid-template-areas:
+      "about-title about-title duration technologies technologies"
+      "about-text about-text about-text img img"
+      "organisation-title organisation-title organisation-title img img"
+      "organisation-text organisation-text organisation-text img img"
+      "experience-title experience-title experience-title img img"
+      "experience-text experience-text experience-text buttons buttons";
+    grid-auto-flow: row dense;
+    align-items: center;
+    border-radius: unset;
+  }
 
-    .project-detail {
-        border-radius: unset;
-    }
+  .duration {
+    padding-top: 8px;
+    align-self: center;
+  }
 
-    .project-img {
-        display: flex;
-        flex-direction: column;
-        width: 453px;
-        padding: unset;
+  .technologies {
+    display: none;
+  }
 
-    }
+  .project-img {
+    display: flex;
+    flex-direction: column;
+    width: 453px;
+    padding: unset;
+  }
 
-    .technologies {
-        display: none;
-    }
+  .tech-box {
+    grid-area: technologies;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .tech-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .tech-img {
+    height: 36px;
+    display: flex;
+    gap: 32px;
+    padding: 4px 0 8px;
+  }
 
-    .tech-img {
-        height: 36px;
-        display: flex;
-        gap: 32px;
-        padding: 12px 0 16px;
-    }
-
-    .tech-img>img {
-        border-radius: unset !important;
-    }
+  .tech-img > img {
+    border-radius: unset !important;
+  }
 }
